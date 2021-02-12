@@ -1,21 +1,22 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css';
-// import NavBar from './components/NavBar';
-import Home from './components/Home';
-import PageOne from './components/PageOne';
-import PageTwo from './components/PageTwo';
-import PageThree from './components/PageThree';
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import NavTabs from './components/NavTabs'
+import Home from './components/pages/Home';
+import PageOne from './components/pages/PageOne';
+import PageTwo from './components/pages/PageTwo';
+import PageThree from './components/pages/PageThree';
 
 function App() {
   return (
     <Router>
-      <Switch>
+      <div>
+        <NavTabs />
         <Route exact path="/" component={Home} />
         <Route exact path="/pageOne" component={PageOne} />
         <Route exact path="/pageTwo" component={PageTwo} />
         <Route exact path="/pageThree" component={PageThree} />
-      </Switch>
+      </div>
     </Router>
   );
 }
